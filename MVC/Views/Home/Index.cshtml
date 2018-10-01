@@ -1,0 +1,175 @@
+﻿@model MVC.Models.CategoriesModel
+@*@model List<MVC.Models.CategoriesModel>*@
+
+@{
+    ViewBag.Title = "Home Page";
+
+}
+
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    section {
+        width: 100%;
+        height: 1000px;
+        padding: 50px 0 0 0;
+    }
+
+    .crud {
+        height: 100%;
+        background-color: rgb(40,44,52);
+    }
+
+    .tableView {
+        border: solid 1px rgb(236, 236, 236);
+        background-color: white;
+    }
+
+    .crud, .title_crud, .tableView, .title_tableView {
+        float: left;
+    }
+
+    .crud, .title_crud {
+        width: 37%;
+    }
+
+    .tableView, .title_tableView {
+        width: 63%;
+    }
+
+    .title_crud, .title_tableView {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .crud, .tableView {
+        height: 100%;
+        padding: 50px;
+    }
+
+    .title_crud {
+        color: azure;
+        background-color: rgb(32, 35, 42);
+    }
+
+    .title_tableView {
+        color: darkgrey;
+        background-color: rgb(236, 236, 236);
+    }
+
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    th, td {
+        padding: .625em;
+        text-align: center;
+    }
+
+    td {
+        font-size: .85em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+
+    tbody tr:hover {
+        background-color: rgb(236, 236, 236);
+    }
+
+    th {
+        background-color: rgb(40,44,52);
+        color: azure;
+        padding: .35em;
+    }
+
+    textarea, input {
+        width: 400px;
+    }
+
+    textarea, input, .update, .delete {
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 0px solid #000000;
+    }
+
+    input {
+        margin-bottom: 20px;
+    }
+
+    .update {
+        background-color: green;
+        margin-bottom: 5px;
+    }
+
+    .delete {
+        background-color: red;
+    }
+
+    .update, .delete {
+        width: 75px;
+        height: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: whitesmoke;
+    }
+
+        .update, .delete : hover {
+            cursor: pointer;
+        }
+
+    .id {
+        width: 30px;
+    }
+</style>
+<body>
+    <section>
+        <div class="title_crud">
+            CATEGORIES
+        </div>
+        <div class="title_tableView">
+            RESULT
+        </div>
+        <div class="crud">
+            <form action="" id="Categories">
+                <input type="number" name="CategoryID" placeholder="  Show #ID" readonly> #<br>
+                <input type="text" name="CategoryName" placeholder="  Enter Name here"> Name<br>
+            </form>
+            <textarea name="Description" form="Categories" placeholder="  Enter description here..."></textarea><br>
+            <input type="submit" value="Create" form="Categories">
+        </div>
+        <div class="tableView">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="id">#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Picture</th>
+                        <th>Settings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="id">1</td>
+                        <td>$100</td>
+                        <td>January</td>
+                        <td>January</td>
+                        <td>
+                            <button class="update"> update</button>
+                            <button class="delete"> delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
